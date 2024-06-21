@@ -1,0 +1,105 @@
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .logo {
+        width: 48%;
+        text-align: center;
+    }
+    .logo img {
+        width: 50%;
+    }
+    .container {
+        width: 95%;
+        flex-direction: column;
+    }
+    .form-box {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .left-half {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }  
+    .right-half {
+        margin: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        flex-direction: column;
+        width: 80%;
+    }
+    .form-input {
+        width: 100%;
+        margin: 5px 0;
+    }
+    textarea.form-input {
+        width: 100%;
+    }
+    .btn{
+        width: 90%;
+        margin: 20px auto;
+    }
+    .map {
+        height: 100vh;
+        margin: 50px 0;
+    }
+    .blue-container {
+        width: 80%;
+        transform: translate(-50%, -50%);
+    }
+    .features {
+        margin: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 96px;
+    }
+    .feature {
+        width: 48%;
+        padding:  48px 0px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .feature img {
+        width: 75%;
+        height: auto;
+        aspect-ratio: 5 / 3;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .final-section {
+        background-color: #082763;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    
+    .logo-container {
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center align horizontally */
+        align-items: center; /* Center align vertically */
+    }
+    
+    .logo-container img {
+        width: 150px;
+        height: auto;
+        display: inline-block;
+    }
+    
+    .final-section hr {
+        opacity: 0;
+        margin: 0;
+    }
+    
+    .final-section p {
+        opacity: 0;
+        margin: 0;
+    }
+}
