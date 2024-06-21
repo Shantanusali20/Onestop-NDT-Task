@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>OnestopNDT</title>
+    <style>
+        .success-message {
+            display: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img src="img/logo.png" alt="OnestopNDT Logo"></div>
+    </nav>
+
+    <section class="form-box container">
+        <div class="left-half">
+            <p class="text-big">Got any Questions?</p>
+            <p class="text-small">Let's discuss it over a cup of coffee.</p>
+        </div>
+        <div class="right-half">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input class="form-input underline-input" type="text" name="name" id="name" placeholder="Name">
+                    <input class="form-input underline-input" type="text" name="org-name" id="org-name" placeholder="Organization Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-input underline-input" type="email" name="email" id="email" placeholder="Email ID">
+                    <input class="form-input underline-input" type="tel" name="contact" id="contact" placeholder="Contact Number">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input underline-input" name="message" id="message" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit &#8594;</button>
+            </form>
+            <div id="successMessage" class="success-message">Form submitted successfully! Thank you.</div>
+        </div>        
+    </section>
+
+    <section class="map">
+        <section class="blue-container">
+            <div class="content">
+                <h2>OnestopNDT</h2>
+                <p>PAP/R/406 Rabale MIDC Near Dol Electric Company Rabale MIDC, Navi Mumbai - 400701.</p>
+                <p>Landline - 022 4131 0099</p>
+                <div class="google-map-logo">
+                    <img src="img/google map.png" alt="Google Map Logo">
+                    <p>Google map Link</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="img/Companies.png" alt="Companies">
+            <p>Companies</p>
+        </div>
+        <div class="feature">
+            <img src="img/Jobs.png" alt="Jobs">
+            <p>Jobs</p>
+        </div>
+        <div class="feature">
+            <img src="img/Articles.png" alt="Articles">
+            <p>Articles</p>
+        </div>
+        <div class="feature">
+            <img src="img/Webinars.png" alt="Webinars">
+            <p>Webinars</p>
+        </div>
+        <div class="feature">
+            <img src="img/Forums.png" alt="Forums">
+            <p>Forums</p>
+        </div>
+        <div class="feature">
+            <img src="img/Application Notes.png" alt="Application Notes">
+            <p>Application Notes</p>
+        </div>
+    </section>
+
+    <section class="final-section">
+        <div class="content">
+            <div class="logo-container">
+                <img src="img/white Logo.png" alt="OnestopNDT Logo">
+            </div>
+            <hr>
+            <p>What is One Stop NDT?</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const orgName = document.getElementById('org-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const contact = document.getElementById('contact').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '' || orgName === '' || email === '' || contact === '' || message === '') {
+                    alert('Please fill in all fields');
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                if (!isValidPhoneNumber(contact)) {
+                    alert('Please enter a valid phone number');
+                    return;
+                }
+
+                simulateSuccess();
+                resetForm();
+            });
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            function isValidPhoneNumber(phone) {
+                const phoneRegex = /^\d{10}$/;
+                return phoneRegex.test(phone);
+            }
+
+            function simulateSuccess() {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            function resetForm() {
+                form.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
